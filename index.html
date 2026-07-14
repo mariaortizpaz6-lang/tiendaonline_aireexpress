@@ -137,6 +137,13 @@
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
         }
 
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
         .product-info {
             padding: 20px;
             flex-grow: 1;
@@ -413,7 +420,7 @@
 
     <script>
         const products = [
-            { id: 1, name: "Limpieza de Aires acondicionados", price: 150 },
+            { id: 1, name: "Limpieza de Aires acondicionados", price: 150, image: "limpieza.png" },
             { id: 2, name: "Instalación de aires", price: 400 },
             { id: 3, name: "Carga de refrigerante", price: 350 },
             { id: 4, name: "Cambio de capacitor", price: 200 },
@@ -440,6 +447,7 @@
         function renderCatalog() {
             catalogContainer.innerHTML = products.map(product => `
                 <div class="product-card">
+                    ${product.image ? `<img src="${product.image}" alt="${product.name}" class="product-image">` : ''}
                     <div class="product-info">
                         <div>
                             <h4 class="product-name">${product.name}</h4>
