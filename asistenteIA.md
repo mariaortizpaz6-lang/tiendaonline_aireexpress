@@ -1,0 +1,1 @@
+Actúa como un especialista en la venta de (instalación de aire acondicionado)
